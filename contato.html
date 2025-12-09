@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Sorriso Moderno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Variáveis de Cores (Refinadas para um toque premium) */
+        :root {
+            --color-primary: #1E3A8A; /* Azul Marinho Profundo (Mais Elegante) */
+            --color-secondary: #0A72B5; /* Azul Ciano (Para links/ênfase secundária) */
+            --color-accent: #DAA520; /* Goldenrod (Ouro, Mais Nobre que Amarelo Puro) */
+            --color-text-light: #f8f9fa;
+            --color-text-dark: #212529;
+            --color-background: #ffffff;
+            --color-light-gray: #F7F8FC; /* Fundo Muito Claro */
+            --color-border: #E0E0E0;
+            --color-danger: #dc3545;
+        }
+
+        /* Reset Básico e Tipografia */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-light-gray);
+            color: var(--color-text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Header / Navegação --- */
+        header {
+            background-color: var(--color-primary);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra mais forte */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 50px; /* Mais padding vertical */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif; /* Fonte elegante para o nome da clínica */
+            color: var(--color-accent);
+            font-size: 2em; /* Um pouco maior */
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .nav-link {
+            color: var(--color-text-light);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-accent);
+        }
+        
+        /* Indicador ativo sutil */
+        .nav-link.active::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--color-accent);
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: var(--color-primary); /* Texto na cor Primária (Azul Marinho) para Contraste */
+            padding: 10px 25px; /* Mais padding */
+            border-radius: 30px; /* Bordas mais arredondadas (Pill shape) */
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            border: 2px solid var(--color-accent); /* Borda para destaque */
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--color-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(218, 165, 32, 0.4);
+        }
+
+        /* --- Main / Formulário de Contato --- */
+        main {
+            padding: 80px 20px; /* Mais espaço no topo/base */
+            min-height: calc(100vh - 150px); /* Ajusta altura para footer */
+            /* Gradiente de fundo sutil para sensação premium */
+            background: linear-gradient(180deg, var(--color-light-gray) 0%, #EFEFF4 100%);
+        }
+
+        .form-content-wrapper {
+            max-width: 700px; /* Contêiner ligeiramente menor */
+            margin: 0 auto;
+            background-color: var(--color-background);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            color: var(--color-primary);
+            margin-bottom: 5px;
+            font-size: 2.8em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--color-text-dark);
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+
+        /* Estilos do Formulário */
+        .form-group label {
+            font-size: 0.95em;
+            color: var(--color-text-dark);
+        }
+
+        .required-star {
+            color: var(--color-danger); /* Usa a cor de perigo (vermelho) para * obrigatório */
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 14px; /* Aumenta o padding interno */
+            border: 1px solid var(--color-border);
+            border-radius: 8px; /* Bordas levemente mais arredondadas */
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--color-secondary); /* Foco no Azul Ciano */
+            box-shadow: 0 0 0 4px rgba(10, 114, 181, 0.15); /* Sombra de foco mais sutil */
+        }
+
+        /* Botão de Envio (usa a mesma classe btn-primary, mas com width 100%) */
+        .form-content-wrapper .btn-primary {
+            margin-top: 20px !important;
+            padding: 15px 25px; /* Mais alto */
+            font-size: 1.1em;
+            border-radius: 8px; /* Volta para a borda do formulário */
+        }
+        
+        .form-content-wrapper .btn-primary:hover {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            transform: none; /* Remove o movimento para botões de formulário */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        /* --- Contato Direto (Diretórios) --- */
+        .direct-contact {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .contact-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 1.6em;
+            margin-bottom: 25px;
+        }
+
+        .contact-info-grid {
+            justify-content: space-between;
+        }
+
+        .contact-item {
+            min-width: 200px; /* Ajuste o min-width para melhor encaixe */
+            padding: 25px 15px; /* Mais padding vertical */
+            background-color: var(--color-light-gray);
+        }
+
+        .icon-gold {
+            font-size: 2.2em;
+            color: var(--color-accent);
+        }
+
+        .contact-item p {
+            font-size: 0.95em;
+            margin: 5px 0;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            padding: 25px 0;
+            font-size: 0.9em;
+        }
+        
+        /* Media Query para responsividade */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                /* Permite que o menu se quebre em telas muito pequenas */
+                flex-wrap: wrap; 
+                gap: 15px;
+            }
+            .nav-links {
+                width: 100%; /* Força os links a ocupar a largura total em mobile */
+                justify-content: center;
+                gap: 10px;
+            }
+            .logo {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .form-content-wrapper {
+                padding: 30px 20px;
+                max-width: 95%;
+            }
+
+            .section-title {
+                font-size: 2.2em;
+            }
+            
+            .contact-info-grid {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Sorriso Moderno</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="#" class="nav-link">Serviços</a>
+                <a href="contato.html" class="nav-link active">Contato</a>
+                <a href="agendeaqui.html" class="btn-primary">Agendar Agora</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="form-content-wrapper">
+            
+            <h2 class="section-title">Fale com Nossa Equipe</h2>
+            <p class="section-subtitle">
+                Estamos prontos para atender você. Preencha o formulário e inicie seu caminho para um sorriso mais elegante.
+            </p>
+
+            <form method="POST" action="">
+                
+                <div class="form-group">
+                    <label for="nome">Nome Completo <span class="required-star">*</span></label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome e sobrenome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email <span class="required-star">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="assunto">Assunto</label>
+                    <input type="text" id="assunto" name="assunto" placeholder="Ex: Dúvida sobre Clareamento">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem <span class="required-star">*</span></label>
+                    <textarea id="mensagem" name="mensagem" rows="6" placeholder="Descreva sua dúvida ou solicitação aqui..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%;">Enviar Mensagem</button>
+            </form>
+            
+            <div class="direct-contact">
+                <h3 class="contact-title">Ou Utilize Nossos Canais de Atendimento</h3>
+                <div class="contact-info-grid">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt icon-gold"></i>
+                        <p>
+                            **Telefone:** (XX) 9999-9999
+                        </p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope icon-gold"></i>
+                        <p>
+                            **Email:** contato@clinica.com
+                        </p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt icon-gold"></i>
+                        <p>
+                            **Endereço:** Rua Elegante, 123
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            &copy; 2025 Clínica Elegance Odonto. Todos os direitos reservados.
+        </div>
+    </footer>
+</body>
+</html>

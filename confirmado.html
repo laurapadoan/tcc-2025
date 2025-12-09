@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento Confirmado | Sorriso Moderno</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* ==================================== */
+        /* 1. VARIÁVEIS E REINICIALIZAÇÃO (Elegance Odontologia) */
+        /* ==================================== */
+        :root {
+            /* Paleta Premium: Azul Marinho e Ouro */
+            --color-primary: #1E3A8A; /* Azul Marinho Profundo */
+            --color-accent: #DAA520; /* Goldenrod (Ouro, Elegância) */
+            --color-secondary: #0A72B5; /* Azul Ciano (Ênfase secundária) */
+            --color-success: #28a745; /* Verde para Sucesso */
+            --color-text-dark: #212529;
+            --color-text-light: #ffffff;
+            --color-background-light: #ffffff;
+            --color-background-gray: #F7F8FC; 
+            --color-border: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            background-color: var(--color-background-gray);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700;
+        }
+
+        /* ==================================== */
+        /* 2. COMPONENTES (Reutilizados do CSS anterior) */
+        /* ==================================== */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border: 2px solid transparent; 
+            border-radius: 30px; 
+            cursor: pointer;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+            text-transform: uppercase;
+        }
+
+        .btn-cta {
+            background-color: var(--color-accent); 
+            color: var(--color-primary); 
+            font-size: 1rem;
+            padding: 15px 35px;
+            border-color: var(--color-accent);
+        }
+
+        .btn-cta:hover {
+            background-color: transparent; 
+            color: var(--color-accent); 
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(218, 165, 32, 0.4);
+        }
+
+        /* --- Header --- */
+        .header {
+            background-color: var(--color-primary);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            padding: 18px 0;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            color: var(--color-accent);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2em;
+            letter-spacing: 2px;
+        }
+        
+        /* Menu simplificado para confirmação */
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-menu ul li a {
+            text-decoration: none;
+            color: var(--color-text-light); 
+            margin-left: 30px;
+            font-weight: 600;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: auto; /* Empurra o footer para baixo */
+        }
+        
+        /* ==================================== */
+        /* 3. CONTEÚDO ESPECÍFICO (CONFIRMAÇÃO) */
+        /* ==================================== */
+
+        .confirmation-section {
+            flex-grow: 1; /* Permite que a seção principal ocupe o espaço restante */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, var(--color-background-gray) 0%, #EFEFF4 100%);
+        }
+
+        .confirmation-card {
+            background-color: var(--color-background-light);
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 650px;
+            width: 100%;
+            text-align: center;
+            border-top: 8px solid var(--color-accent); /* Destaque em ouro */
+        }
+
+        .confirmation-card .icon-success {
+            font-size: 4em;
+            color: var(--color-success); /* Verde para Sucesso */
+            margin-bottom: 20px;
+            animation: bounce 0.8s ease-out;
+        }
+
+        @keyframes bounce {
+            0% { transform: scale(0.7); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        .confirmation-card h2 {
+            font-size: 2.5em;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+
+        .confirmation-card p {
+            font-size: 1.1em;
+            color: var(--color-text-dark);
+            margin-bottom: 30px;
+        }
+
+        .details-box {
+            background-color: var(--color-background-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        .details-box p {
+            margin: 10px 0;
+            font-size: 1em;
+            color: #555;
+        }
+
+        .details-box strong {
+            color: var(--color-primary);
+            display: inline-block;
+            min-width: 80px;
+        }
+        
+        .contact-link {
+            font-weight: 600;
+            color: var(--color-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-link:hover {
+            color: var(--color-primary);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">Sorriso Moderno</div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="confirmation-section">
+        <div class="confirmation-card">
+            
+            <i class="fas fa-check-circle icon-success"></i>
+
+            <h2>Agendamento Confirmado!</h2>
+            <p>
+                Sua jornada para um sorriso mais elegante começou. 
+                Enviamos todos os detalhes do seu agendamento para o email cadastrado.
+            </p>
+
+            <div class="details-box">
+                <p><strong><i class="fas fa-calendar-alt"></i> Data:</strong> 15 de Dezembro de 2025</p>
+                <p><strong><i class="fas fa-clock"></i> Hora:</strong> 10:30h</p>
+                <p><strong><i class="fas fa-user-md"></i> Especialista:</strong> Dra. Ana Silva</p>
+                <p><strong><i class="fas fa-stethoscope"></i> Serviço:</strong> Clareamento Dental Premium</p>
+            </div>
+            
+            <p style="margin-top: 30px; font-size: 0.95em;">
+                Em caso de dúvidas ou necessidade de reagendamento, entre em contato: 
+                <a href="tel:(XX) 9999-9999" class="contact-link">(XX) 9999-9999</a>
+            </p>
+
+            <a href="index.html" class="btn btn-cta" style="margin-top: 20px;">
+                Voltar para o Início
+            </a>
+            
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div>
+            &copy; 2025 Clínica Elegance Odonto. Todos os direitos reservados.
+        </div>
+    </footer>
+</body>
+</html>

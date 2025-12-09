@@ -1,0 +1,326 @@
+/* ==================================== */
+/* 1. VARIÁVEIS E REINICIALIZAÇÃO (Elegance Odontologia) */
+/* ==================================== */
+:root {
+  /* Paleta Premium: Azul Marinho e Ouro */
+  --color-primary: #1E3A8A; /* Azul Marinho Profundo (Confiança/Profissionalismo) */
+  --color-accent: #DAA520; /* Goldenrod (Ouro, Elegância) */
+  --color-secondary: #0A72B5; /* Azul Ciano (Ênfase secundária) */
+  --color-text-dark: #212529;
+  --color-text-light: #ffffff;
+  --color-background-light: #ffffff;
+  --color-background-gray: #F7F8FC; /* Fundo Muito Claro/Premium */
+  --color-border: #E0E0E0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Uso da fonte moderna definida anteriormente */
+  font-family: 'Montserrat', sans-serif; 
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  background-color: var(--color-background-gray); /* Fundo da página sutilmente cinza */
+}
+
+/* IMPORTANTE: Você precisará linkar as fontes no HTML */
+/* <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"> */
+
+
+.container {
+  max-width: 1200px; /* Aumentado para mais espaço */
+  margin: 0 auto;
+  padding: 0 25px; /* Aumentado o padding lateral */
+}
+
+/* Tipografia */
+h1, h2, h3 {
+  /* Fonte Elegante para Títulos */
+  font-family: 'Playfair Display', serif; 
+  font-weight: 700;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.7rem; }
+
+
+/* ==================================== */
+/* 2. COMPONENTES */
+/* ==================================== */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border: 2px solid transparent; /* Adiciona uma borda transparente para o hover */
+  border-radius: 30px; /* Bordas arredondadas (Pill shape) */
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+  text-transform: uppercase;
+}
+
+.btn-cta {
+  background-color: var(--color-accent); /* Ouro */
+  color: var(--color-primary); /* Texto em azul marinho no botão de ouro */
+  font-size: 1rem;
+  padding: 15px 35px;
+  border-color: var(--color-accent);
+}
+
+.btn-cta:hover {
+  background-color: transparent; /* Fundo Transparente */
+  color: var(--color-accent); /* Texto em Ouro */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(218, 165, 32, 0.4);
+}
+
+/* Título de Seção */
+.section-title {
+  text-align: center;
+  margin-bottom: 50px; /* Mais espaço */
+  color: var(--color-primary);
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ==================================== */
+/* 3. LAYOUT E SEÇÕES ESPECÍFICAS */
+/* ==================================== */
+
+/* HEADER */
+.header {
+  background-color: var(--color-primary); /* Cabeçalho Azul Marinho */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo { /* Novo seletor para o logo */
+  /* Estilo do Logo/Nome da Clínica */
+  color: var(--color-accent);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2em;
+  letter-spacing: 2px;
+}
+/* Removida a estilização de .header .btn-cta pois o logo terá sua própria classe */
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav-menu ul li a {
+  text-decoration: none;
+  color: var(--color-text-light); /* Cor clara no fundo escuro */
+  margin-left: 30px; /* Mais espaçamento */
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+  font-weight: 600;
+}
+
+.nav-menu ul li a:hover {
+  color: var(--color-accent); /* Ouro no hover */
+}
+/* Indicador ativo sutil (opcional, mas bom para menus) */
+.nav-menu ul li a.active::after { 
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-accent);
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+
+.hamburger {
+  display: none;
+}
+
+
+/* HERO SECTION */
+.hero-section {
+  background: linear-gradient(135deg, var(--color-background-gray) 0%, #EFEFF4 100%);
+  padding: 100px 0; /* Mais padding */
+  text-align: center;
+  box-shadow: inset 0 -10px 15px -10px rgba(0, 0, 0, 0.08);
+}
+
+.hero-content h1 {
+  font-size: 3.5rem; /* Título maior */
+  margin-bottom: 20px;
+  color: var(--color-primary); 
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.35rem;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #555;
+}
+
+/* SERVICES SECTION */
+.services-section {
+  padding: 80px 0; /* Mais padding */
+  background-color: var(--color-background-light); /* Fundo branco */
+}
+
+.services-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px; /* Mais espaçamento */
+}
+
+.service-card {
+  flex: 1;
+  background-color: var(--color-background-light);
+  border-radius: 10px; /* Bordas mais arredondadas */
+  padding: 40px; /* Mais padding interno */
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Sombra mais destacada */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 5px solid var(--color-accent); /* Destaque em ouro no topo */
+}
+
+.service-card:hover {
+  transform: translateY(-8px); /* Efeito de flutuação mais evidente */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Se você usar ícones da Font Awesome em vez de imagens, remova a regra a seguir */
+.service-card img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 20px;
+} 
+
+.service-card h3 {
+  color: var(--color-primary);
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif; /* Títulos menores usam Montserrat */
+  font-weight: 700;
+}
+.service-card p {
+  color: #666;
+}
+
+
+/* TESTIMONIAL SECTION */
+.testimonial-section {
+  background-color: var(--color-background-gray);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.testimonial-card {
+  max-width: 800px; /* Mais largo */
+  margin: 0 auto;
+  padding: 40px;
+  background-color: var(--color-background-light);
+  border-radius: 10px;
+  border-left: 8px solid var(--color-accent); /* Ouro no destaque lateral */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  font-size: 1.25rem; /* Maior */
+  margin-bottom: 20px;
+  position: relative;
+  color: var(--color-text-dark);
+}
+
+.testimonial-card p::before {
+  content: "\201C";
+  font-size: 4rem; /* Maior e mais sutil */
+  color: var(--color-accent);
+  position: absolute;
+  top: -20px;
+  left: 0; /* Alinhado à esquerda do card */
+  opacity: 0.15;
+  line-height: 0;
+}
+
+.testimonial-card h4 {
+  font-weight: 600;
+  color: var(--color-primary); /* Nome do cliente em azul marinho */
+  text-align: right;
+  margin-right: 20px;
+  font-size: 1.1em;
+}
+
+/* FOOTER */
+.footer {
+  background-color: var(--color-primary); /* Azul Marinho no footer */
+  color: var(--color-text-light);
+  padding: 30px 0; /* Mais padding */
+  text-align: center;
+  font-size: 0.9em;
+}
+
+/* ==================================== */
+/* 4. RESPONSIVIDADE (Ajustes Adicionais) */
+/* ==================================== */
+@media (max-width: 900px) {
+  .services-grid {
+      flex-direction: column;
+      gap: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 1.8rem; }
+  
+  .navbar {
+      flex-wrap: wrap;
+  }
+  
+  .nav-menu {
+      width: 100%; /* Força o menu a quebrar */
+      margin-top: 15px;
+  }
+  
+  .nav-menu ul {
+      justify-content: center;
+      gap: 10px;
+  }
+
+  .header .logo {
+      width: 100%;
+      text-align: center;
+  }
+  
+  .hero-section {
+      padding: 60px 0;
+  }
+
+  .btn-cta {
+      padding: 12px 20px;
+  }
+  
+  .testimonial-card {
+      padding: 25px;
+  }
+}

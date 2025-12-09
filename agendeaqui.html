@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Sorriso Moderno</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-flex">
+            <a href="index.html" class="btn btn-cta logo-link">Sorriso Moderno</a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html#services">Serviços</a></li>
+                    <li><a href="#">Galeria</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="booking-section">
+            <div class="container">
+                <h1 class="section-title main-title">Agende sua Consulta Online</h1>
+                
+                <form class="form-agendamento" id="formAgendamento">                     <p class="form-description">Preencha o formulário abaixo para solicitar seu horário. Nossa equipe entrará em contato para confirmação.</p>
+
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone (WhatsApp):</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(DDD) 9XXXX-XXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="servico">Serviço de Interesse:</label>
+                        <select id="servico" name="servico" required>
+                            <option value="" disabled selected>Selecione um Serviço</option>
+                            <option value="Limpeza">Limpeza e Profilaxia</option>
+                            <option value="Clareamento">Clareamento Dental</option>
+                            <option value="Implantes">Implantes Dentários</option>
+                            <option value="Ortodontia">Ortodontia</option>
+                            <option value="Avaliacao">Avaliação/Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group half-width">
+                        <label for="data">Data Preferencial:</label>
+                        <input type="date" id="data" name="data" required>
+                    </div>
+
+                    <div class="form-group half-width">
+                        <label for="hora">Horário Preferencial:</label>
+                        <input type="time" id="hora" name="hora" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="observacoes">Observações (opcional):</label>
+                        <textarea id="observacoes" name="observacoes" rows="4" placeholder="Descreva brevemente se há alguma necessidade especial ou urgência."></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                                                <button type="submit" class="btn btn-cta btn-submit">Confirmar Agendamento</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Sorriso Moderno. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+        <script src="script.js"></script> 
+    </body>
+</html>
